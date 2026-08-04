@@ -79,18 +79,59 @@ img{
     overflow:hidden;
 }
 
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+right:-250px;
+
+top:-200px;
+
+width:700px;
+
+height:700px;
+
+background:radial-gradient(circle,
+rgba(212,175,55,.18) 0%,
+transparent 70%);
+
+filter:blur(80px);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
 .hero-video{
+
     position:absolute;
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
+    animation:heroZoom 20s ease-in-out infinite alternate;
+
 }
 
 .hero-overlay{
+
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.65);
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,.82) 0%,
+        rgba(0,0,0,.55) 45%,
+        rgba(0,0,0,.35) 100%
+    );
+
 }
 
 .navbar{
@@ -217,9 +258,9 @@ margin-bottom:50px;
 
 .btn-gold:hover{
 
-    transform:translateY(-5px);
+transform:translateY(-6px) scale(1.03);
 
-    box-shadow:0 0 40px rgba(212,175,55,.65);
+box-shadow:0 20px 45px rgba(212,175,55,.45);
 
 }
 
@@ -1155,5 +1196,20 @@ border-radius:50px;
 ::-webkit-scrollbar-thumb:hover{
 
 background:#e2bf54;
+
+}
+@keyframes heroZoom{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.08);
+
+}
 
 }
