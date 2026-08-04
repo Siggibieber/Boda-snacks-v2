@@ -1056,5 +1056,29 @@ display:none;
 display:flex;
 
 }
+}
+.mobile-open{
+
+display:flex !important;
+
+position:absolute;
+
+top:90px;
+
+left:0;
+
+right:0;
+
+background:#111;
+
+padding:35px;
+
+flex-direction:column;
+
+text-align:center;
+
+border-radius:20px;
+
+gap:25px;
 
 }
