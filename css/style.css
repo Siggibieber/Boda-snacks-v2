@@ -52,7 +52,7 @@ body{
 
 section{
 
-    padding:100px 0;
+    padding:140px 0;
 
 }
 
@@ -169,18 +169,33 @@ border:1px solid rgba(255,255,255,.08);
 }
 
 .hero h1{
-    font-size:clamp(42px,6vw,76px);
-    line-height:1.1;
-    max-width:850px;
-    margin-bottom:25px;
+
+font-size:clamp(58px,7vw,92px);
+
+font-weight:800;
+
+line-height:1.05;
+
+letter-spacing:-2px;
+
+max-width:900px;
+
+margin-bottom:35px;
+
 }
 
 .hero p{
-    max-width:700px;
-    color:#ddd;
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:40px;
+
+font-size:22px;
+
+line-height:1.9;
+
+max-width:720px;
+
+color:#ececec;
+
+margin-bottom:50px;
+
 }
 
 .hero-buttons{
@@ -377,7 +392,7 @@ background:#0b0b0b;
 
 .showcase-content p{
 
-    color:#d5d5d5;
+  color:var(--text-light);
     line-height:1.9;
     margin-bottom:40px;
     font-size:18px;
@@ -663,7 +678,7 @@ color:var(--gold);
 
 font-size:20px;
 
-color:#ddd;
+color:var(--text-light);
 
 line-height:1.8;
 
