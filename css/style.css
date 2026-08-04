@@ -511,19 +511,20 @@ background:var(--section2);
 
 .process-card{
 
-    background:#161616;
+    background:#ffffff;
+
+    border:1px solid #ebe6db;
+
+    border-radius:24px;
 
     padding:45px;
 
-    border-radius:20px;
+    transition:all .4s ease;
 
-    border:1px solid rgba(212,175,55,.15);
-
-    text-align:center;
-
-    transition:.35s;
+    box-shadow:0 15px 35px rgba(0,0,0,.05);
 
 }
+
 .process-card:hover{
 
     transform:translateY(-12px);
@@ -695,11 +696,11 @@ background:var(--section2);
 
     height:120px;
 
-    background:#181818;
+    background:#ffffff;
 
-    border-radius:18px;
+    border-radius:24px;
 
-    border:1px solid rgba(212,175,55,.15);
+    border:1px solid #ebe6db;
 
     display:flex;
 
@@ -707,11 +708,13 @@ background:var(--section2);
 
     align-items:center;
 
-    color:#999;
+    color:#777;
 
     font-size:20px;
 
     transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.04);
 
 }
 
