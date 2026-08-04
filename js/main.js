@@ -138,10 +138,16 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => counterObserver.observe(counter));
 
-const heroVideo = document.querySelector(".hero-video");
+window.addEventListener("load", () => {
 
-if (heroVideo) {
-    heroVideo.addEventListener("loadeddata", () => {
-        heroVideo.playbackRate = 0.5;
-    });
-}
+    const heroVideo = document.querySelector(".hero-video");
+
+    if (heroVideo) {
+
+        heroVideo.playbackRate = 0.2;
+
+        console.log("Playback Rate:", heroVideo.playbackRate);
+
+    }
+
+});
