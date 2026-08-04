@@ -885,3 +885,24 @@ margin:auto auto 25px;
 }
 
 }
+/* ===========================
+SCROLL ANIMATION
+=========================== */
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:all .9s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
