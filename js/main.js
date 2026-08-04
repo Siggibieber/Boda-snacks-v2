@@ -144,7 +144,7 @@ window.addEventListener("load", () => {
 
     if (heroVideo) {
 
-        heroVideo.playbackRate = 0.2;
+        heroVideo.playbackRate = 0.15;
 
         console.log("Playback Rate:", heroVideo.playbackRate);
 
