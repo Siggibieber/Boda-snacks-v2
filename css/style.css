@@ -1007,3 +1007,54 @@ NAVBAR SCROLL
     background:var(--gold);
 
 }
+/* ===========================
+HAMBURGER
+=========================== */
+
+.hamburger{
+
+display:none;
+
+flex-direction:column;
+
+gap:6px;
+
+cursor:pointer;
+
+}
+
+.hamburger span{
+
+width:28px;
+
+height:3px;
+
+background:white;
+
+border-radius:20px;
+
+transition:.3s;
+
+}
+
+@media(max-width:950px){
+
+.nav-links{
+
+display:none;
+
+}
+
+.btn-nav{
+
+display:none;
+
+}
+
+.hamburger{
+
+display:flex;
+
+}
+
+}
