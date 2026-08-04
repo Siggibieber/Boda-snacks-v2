@@ -169,6 +169,17 @@ img{
     padding:18px 36px;
     border-radius:50px;
     font-weight:700;
+
+    box-shadow:0 0 25px rgba(212,175,55,.35);
+    transition:.35s;
+}
+
+.btn-gold:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 40px rgba(212,175,55,.65);
+
 }
 
 .btn-outline{
