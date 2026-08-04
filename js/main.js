@@ -138,9 +138,10 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => counterObserver.observe(counter));
 
-// Hero Video langsamer abspielen
 const heroVideo = document.querySelector(".hero-video");
 
 if (heroVideo) {
-    heroVideo.playbackRate = 0.6;
+    heroVideo.addEventListener("loadeddata", () => {
+        heroVideo.playbackRate = 0.5;
+    });
 }
