@@ -96,3 +96,44 @@ burger.addEventListener("click",()=>{
 nav.classList.toggle("mobile-open");
 
 });
+// ==========================
+// COUNTER
+// ==========================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = +counter.dataset.target;
+
+        let current = 0;
+
+        const step = Math.max(1, Math.ceil(target / 60));
+
+        const timer = setInterval(() => {
+
+            current += step;
+
+            if (current >= target) {
+
+                current = target;
+                clearInterval(timer);
+
+            }
+
+            counter.innerText = current;
+
+        }, 20);
+
+        counterObserver.unobserve(counter);
+
+    });
+
+}, { threshold: 0.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
