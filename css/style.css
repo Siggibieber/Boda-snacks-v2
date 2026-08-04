@@ -437,3 +437,90 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===========================
+   PROCESS
+=========================== */
+
+.process{
+
+    background:#0a0a0a;
+
+}
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.process-card{
+
+    background:#161616;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.process-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--gold);
+
+}
+
+.number{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin:0 auto 25px;
+
+}
+
+.process-card h3{
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+    font-size:26px;
+
+}
+
+.process-card p{
+
+    color:#d6d6d6;
+
+    line-height:1.8;
+
+}
