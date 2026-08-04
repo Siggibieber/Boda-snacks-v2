@@ -1,0 +1,58 @@
+/* ========= RESET ========= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0a0a0a;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* ========= FARBEN ========= */
+
+:root{
+
+    --gold:#d4af37;
+    --gold-light:#e7c85f;
+    --black:#0a0a0a;
+    --dark:#141414;
+    --white:#ffffff;
+
+}
+
+/* ========= CONTAINER ========= */
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 0;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
