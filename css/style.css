@@ -11,22 +11,33 @@ html{
 }
 
 body{
+
     font-family:'Poppins',sans-serif;
-background:
-radial-gradient(circle at top,#202020 0%,#0b0b0b 45%,#050505 100%);
-    color:#ffffff;
+
+    background:#F7F5F2;
+
+    color:#1C1C1C;
+
     overflow-x:hidden;
+
 }
 
 /* ========= FARBEN ========= */
 
 :root{
 
-    --gold:#d4af37;
-    --gold-light:#e7c85f;
-    --black:#0a0a0a;
-    --dark:#141414;
-    --white:#ffffff;
+    --gold:#C8A54B;
+    --gold-light:#E5C870;
+
+    --black:#171717;
+    --white:#FFFFFF;
+
+    --bg:#F7F5F2;
+    --section:#FFFFFF;
+    --section2:#F2EFE9;
+
+    --text:#1F1F1F;
+    --text-light:#6B6B6B;
 
 }
 
@@ -212,7 +223,7 @@ border:1px solid rgba(255,255,255,.08);
 
 .benefits{
 
-    background:#111;
+background:var(--section);
 
 }
 
@@ -258,7 +269,7 @@ border:1px solid rgba(255,255,255,.08);
 
 .benefit-card{
 
-    background:#1a1a1a;
+    background:white;
     border:1px solid rgba(212,175,55,.15);
     border-radius:20px;
     padding:40px;
@@ -302,7 +313,7 @@ border:1px solid rgba(255,255,255,.08);
 
 .coffee-showcase{
 
-    background:#0b0b0b;
+background:#0b0b0b;
 
 }
 
@@ -415,7 +426,7 @@ grid-template-columns:1fr;
 
 .stats{
 
-    background:#111;
+background:var(--section);
     padding:90px 0;
 
 }
@@ -431,7 +442,7 @@ grid-template-columns:1fr;
 .stat{
 
     text-align:center;
-    background:#1a1a1a;
+    background:white;
     padding:40px;
     border-radius:20px;
     border:1px solid rgba(212,175,55,.12);
@@ -478,7 +489,7 @@ grid-template-columns:1fr;
 
 .process{
 
-    background:#0a0a0a;
+background:var(--section2);
 
 }
 
@@ -555,7 +566,7 @@ grid-template-columns:1fr;
 
 .process-card p{
 
-    color:#d6d6d6;
+  color:var(--text);
 
     line-height:1.8;
 
@@ -567,7 +578,7 @@ CONFIGURATOR
 
 .configurator{
 
-background:#111;
+background:var(--section);
 
 }
 
@@ -621,7 +632,7 @@ padding:45px;
 
 border-radius:20px;
 
-border:1px solid rgba(212,175,55,.15);
+border:1px solid #ECE8DF;
 
 text-align:center;
 
@@ -658,7 +669,7 @@ margin-bottom:30px;
 
 .trust{
 
-    background:#0b0b0b;
+background:var(--section2);
 
 }
 
@@ -711,7 +722,7 @@ margin-bottom:30px;
 
 .cta{
 
-background:#111;
+background:var(--section);
 
 }
 
