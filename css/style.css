@@ -74,9 +74,11 @@ img{
 =========================== */
 
 .hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
+
+min-height:100vh;
+
+padding:140px 0 80px;
+
 }
 
 .hero::before{
@@ -127,7 +129,7 @@ z-index:1;
     background:
     linear-gradient(
         to right,
-        rgba(0,0,0,.82) 0%,
+        rgba(0,0,0,.72) 0%,
         rgba(0,0,0,.55) 45%,
         rgba(0,0,0,.35) 100%
     );
@@ -186,6 +188,7 @@ border:1px solid rgba(255,255,255,.08);
 }
 
 .hero-content{
+
     position:relative;
     z-index:5;
 
@@ -193,20 +196,47 @@ border:1px solid rgba(255,255,255,.08);
     flex-direction:column;
     justify-content:center;
 
-    height:80vh;
-    animation:heroFade 1.4s ease;
+    max-width:760px;
 
+    padding:60px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:35px;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.30);
+
+    animation:heroFade 1.3s ease;
+border-left:5px solid var(--gold);
 }
-
 .hero-badge{
-    display:inline-block;
-    width:max-content;
-    background:rgba(212,175,55,.18);
-    border:1px solid rgba(212,175,55,.35);
-    color:var(--gold);
-    padding:10px 20px;
-    border-radius:40px;
-    margin-bottom:30px;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+width:max-content;
+
+padding:14px 26px;
+
+border-radius:60px;
+
+background:rgba(200,165,75,.18);
+
+border:1px solid rgba(200,165,75,.30);
+
+color:#fff;
+
+font-weight:600;
+
+margin-bottom:35px;
+
 }
 
 .hero h1{
@@ -238,11 +268,16 @@ color:#ececec;
 margin-bottom:50px;
 
 }
-
 .hero-buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:15px;
+
 }
 
 .btn-gold{
@@ -265,11 +300,25 @@ box-shadow:0 20px 45px rgba(212,175,55,.45);
 }
 
 .btn-outline{
-    border:2px solid var(--gold);
-    color:white;
-    padding:18px 36px;
-    border-radius:50px;
-    font-weight:700;
+
+padding:18px 38px;
+
+border-radius:50px;
+
+border:2px solid rgba(255,255,255,.35);
+
+color:white;
+
+transition:.35s;
+
+}
+
+.btn-outline:hover{
+
+background:white;
+
+color:#111;
+
 }
 
 
