@@ -82,14 +82,26 @@ img{
 }
 
 .navbar{
-    position:relative;
-    z-index:10;
+    
+position:fixed;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+top:20px;
 
-    padding:25px 0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:min(1200px,94%);
+
+background:rgba(10,10,10,.55);
+
+backdrop-filter:blur(18px);
+
+padding:18px 35px;
+
+border-radius:70px;
+
+border:1px solid rgba(255,255,255,.08);
 }
 
 .logo img{
@@ -129,6 +141,8 @@ img{
     justify-content:center;
 
     height:80vh;
+    animation:heroFade 1.4s ease;
+
 }
 
 .hero-badge{
@@ -189,6 +203,8 @@ img{
     border-radius:50px;
     font-weight:700;
 }
+
+
 /* ===========================
    VORTEILE
 =========================== */
@@ -916,4 +932,22 @@ opacity:1;
 
 transform:translateY(0);
 
+}
+@keyframes heroFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 }
