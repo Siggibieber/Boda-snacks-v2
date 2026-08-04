@@ -951,3 +951,22 @@ transform:translateY(0);
 
 }
 }
+/* ===========================
+NAVBAR SCROLL
+=========================== */
+
+.navbar{
+
+    transition:all .4s ease;
+
+}
+
+.navbar-scroll{
+
+    padding:14px 30px;
+
+    background:rgba(8,8,8,.92);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
