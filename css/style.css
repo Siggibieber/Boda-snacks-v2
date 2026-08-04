@@ -1213,3 +1213,64 @@ transform:scale(1.08);
 }
 
 }
+.scroll-indicator{
+
+position:absolute;
+
+left:50%;
+
+bottom:35px;
+
+transform:translateX(-50%);
+
+width:32px;
+
+height:56px;
+
+border:2px solid white;
+
+border-radius:30px;
+
+display:flex;
+
+justify-content:center;
+
+padding-top:10px;
+
+z-index:20;
+
+}
+
+.scroll-indicator span{
+
+width:6px;
+
+height:12px;
+
+background:white;
+
+border-radius:20px;
+
+animation:scrollDown 2s infinite;
+
+}
+
+@keyframes scrollDown{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(20px);
+
+opacity:0;
+
+}
+
+}
