@@ -267,8 +267,11 @@ border:1px solid rgba(255,255,255,.08);
 
 .benefit-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+
     border-color:var(--gold);
+
+    box-shadow:0 0 35px rgba(212,175,55,.18);
 
 }
 
@@ -323,8 +326,12 @@ border:1px solid rgba(255,255,255,.08);
 .showcase-image img{
 
     width:100%;
+
     max-width:500px;
+
     transition:.5s;
+
+    filter:drop-shadow(0 35px 40px rgba(0,0,0,.45));
 
 }
 
@@ -499,12 +506,13 @@ grid-template-columns:1fr;
     transition:.35s;
 
 }
-
 .process-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
 
     border-color:var(--gold);
+
+    box-shadow:0 0 35px rgba(212,175,55,.18);
 
 }
 
@@ -968,5 +976,34 @@ NAVBAR SCROLL
     background:rgba(8,8,8,.92);
 
     box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+.section-title h2{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.section-title h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-18px;
+
+    width:90px;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:var(--gold);
 
 }
