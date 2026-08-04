@@ -616,3 +616,56 @@ line-height:1.8;
 margin-bottom:30px;
 
 }
+/* ===========================
+   TRUST
+=========================== */
+
+.trust{
+
+    background:#0b0b0b;
+
+}
+
+.logo-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.logo-box{
+
+    height:120px;
+
+    background:#181818;
+
+    border-radius:18px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#999;
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.logo-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--gold);
+
+}
