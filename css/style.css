@@ -74,11 +74,9 @@ img{
 =========================== */
 
 .hero{
-
-min-height:100vh;
-
-padding:140px 0 80px;
-
+    position:relative;
+    min-height:100vh;
+    padding:140px 0 80px;
 }
 
 .hero::before{
@@ -108,22 +106,19 @@ z-index:1;
 }
 
 .hero-video{
-
     position:absolute;
     inset:0;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
+    z-index:0;
     animation:heroZoom 20s ease-in-out infinite alternate;
-
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
+    z-index:1;
 
     background:
     linear-gradient(
@@ -135,16 +130,17 @@ z-index:1;
 }
 
 .navbar{
-    position:fixed;
+    position:fixed !important;
     top:20px;
     left:50%;
     transform:translateX(-50%);
 
-    z-index:1000;
+    z-index:99999 !important;
 
     width:min(1200px,94%);
-    background:rgba(10,10,10,.55);
+    background:rgba(10,10,10,.80);
     backdrop-filter:blur(18px);
+
     padding:18px 35px;
     border-radius:70px;
     border:1px solid rgba(255,255,255,.08);
