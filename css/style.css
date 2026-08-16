@@ -241,6 +241,8 @@ margin-bottom:35px;
 
 .hero h1{
 
+color:#fff;
+
 font-size:clamp(58px,7vw,92px);
 
 font-weight:800;
