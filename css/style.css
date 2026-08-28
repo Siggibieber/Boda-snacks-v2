@@ -495,20 +495,17 @@ background:#0b0b0b;
 
 }
 
-.showcase-content span{
-
-    color:var(--gold);
-    font-weight:700;
-    letter-spacing:2px;
-    text-transform:uppercase;
-
+.showcase-content p{
+    color:#F2F2F2;
+    line-height:1.9;
+    margin-bottom:40px;
+    font-size:18px;
 }
 
 .showcase-content h2{
-
     font-size:52px;
     margin:20px 0;
-
+    color:#FFFFFF;
 }
 
 .showcase-content p{
@@ -520,16 +517,13 @@ background:#0b0b0b;
 
 }
 
-.coffee-list{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
-    margin-bottom:45px;
-
+.coffee-list div{
+    background:#171717;
+    color:#FFFFFF;
+    border-radius:12px;
+    padding:18px;
+    border:1px solid rgba(212,175,55,.30);
+    font-weight:500;
 }
 
 .coffee-list div{
