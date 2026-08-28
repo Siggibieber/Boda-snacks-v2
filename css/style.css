@@ -295,14 +295,16 @@ margin-top:15px;
 
 .btn-gold{
     background:linear-gradient(
-135deg,
-#c89f3d,
-#e3c56d
-);
+        135deg,
+        #c89f3d,
+        #e3c56d
+    );
     color:black;
     padding:18px 36px;
     border-radius:50px;
     font-weight:700;
+
+    margin-top:25px;
 
     box-shadow:0 0 25px rgba(212,175,55,.35);
     transition:.35s;
