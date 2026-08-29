@@ -1,46 +1,151 @@
 function showConfig(size){
 
-const result=document.getElementById("configResult");
+    const result = document.getElementById("configResult");
 
-if(size==="small"){
+    const solutions = {
 
-result.innerHTML=`
-<h3>1–20 Mitarbeiter</h3>
-<p>Empfehlung: Kompakter Premium-Kaffeevollautomat.</p>
-<a class="btn-gold" href="#kontakt">Kostenlos beraten lassen</a>
-`;
+        small: {
+            title: "Kompakte Kaffeelösung",
+            text: "Für kleinere Teams bieten wir eine kompakte Kaffeelösung, die zuverlässig in den täglichen Büroalltag passt.",
+            price: "Individuelles Angebot"
+        },
 
-}
+        medium: {
+            title: "Kaffeelösung für 20–50 Mitarbeiter",
+            text: "Für Unternehmen dieser Größe empfehlen wir eine leistungsfähige Kaffeelösung für den regelmäßigen täglichen Kaffeegenuss.",
+            price: "Individuelles Angebot"
+        },
 
-if(size==="medium"){
+        large: {
+            title: "Kaffeelösung für 50–100 Mitarbeiter",
+            text: "Bei größeren Teams kommt es besonders auf Leistung und Zuverlässigkeit an. Wir wählen die passende Lösung entsprechend Ihrem tatsächlichen Bedarf.",
+            price: "Individuelles Angebot"
+        },
 
-result.innerHTML=`
-<h3>20–50 Mitarbeiter</h3>
-<p>Empfehlung: Kaffeevollautomat mit Milchsystem.</p>
-<a class="btn-gold" href="#kontakt">Kostenlos beraten lassen</a>
-`;
+        enterprise: {
+            title: "Individuelle Kaffeelösung",
+            text: "Für Unternehmen mit mehr als 100 Mitarbeitern planen wir die Kaffeelösung individuell – passend zu Mitarbeiterzahl, Verbrauch und Standort.",
+            price: "Auf Anfrage"
+        }
 
-}
+    };
 
-if(size==="large"){
 
-result.innerHTML=`
-<h3>50–100 Mitarbeiter</h3>
-<p>Empfehlung: Hochleistungs-Kaffeeautomat mit zwei Bohnenbehältern.</p>
-<a class="btn-gold" href="#kontakt">Kostenlos beraten lassen</a>
-`;
+    const selected = solutions[size];
 
-}
 
-if(size==="enterprise"){
+    result.innerHTML = `
 
-result.innerHTML=`
-<h3>100+ Mitarbeiter</h3>
-<p>Empfehlung: Individuelle Premium-Kaffeelösung für hohe Auslastung.</p>
-<a class="btn-gold" href="#kontakt">Kostenlos beraten lassen</a>
-`;
+        <div class="config-result-content">
 
-}
+            <span class="config-label">
+                IHRE PASSENDE KAFFEELÖSUNG
+            </span>
+
+            <h3>
+                ${selected.title}
+            </h3>
+
+            <p>
+                ${selected.text}
+            </p>
+
+
+            <div class="config-features">
+
+                <div>
+                    <i data-lucide="coffee"></i>
+                    <span>Hochwertiger Kaffee</span>
+                </div>
+
+                <div>
+                    <i data-lucide="wrench"></i>
+                    <span>Wartung & Service</span>
+                </div>
+
+                <div>
+                    <i data-lucide="package"></i>
+                    <span>Regelmäßige Versorgung</span>
+                </div>
+
+                <div>
+                    <i data-lucide="credit-card"></i>
+                    <span>Modernes Bezahlen</span>
+                </div>
+
+            </div>
+
+
+            <div class="config-price">
+
+                <span>Ihre Investition</span>
+
+                <strong>
+                    ${selected.price}
+                </strong>
+
+                <small>
+                    Abhängig von Ausstattung, Nutzung und Verbrauch.
+                </small>
+
+            </div>
+
+
+            <a href="#kontakt" class="btn-gold">
+                Kaffeelösung anfragen
+                <span>→</span>
+            </a>
+
+        </div>
+
+<div class="config-visual">
+
+            <div class="coffee-machine-placeholder">
+
+                <i data-lucide="coffee"></i>
+
+                <span>
+                    BEISPIELDARSTELLUNG
+                </span>
+
+                <strong>
+                    Moderne Kaffeelösung
+                </strong>
+
+                <small>
+                    Das tatsächliche Maschinenmodell
+                    kann je nach Bedarf variieren.
+                </small>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    /* Ergebnis sichtbar machen */
+
+    result.classList.add("visible");
+
+
+    /* Lucide Icons neu laden */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+
+    /* Zum Ergebnis scrollen */
+
+    setTimeout(() => {
+
+        result.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+
+    }, 150);
 
 }
 // ==========================
