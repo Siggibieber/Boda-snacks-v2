@@ -2,152 +2,344 @@ function showConfig(size){
 
     const result = document.getElementById("configResult");
 
-    const solutions = {
+    if (!result) {
+        console.log("configResult nicht gefunden!");
+        return;
+    }
 
-        small: {
-            title: "Kompakte Kaffeelösung",
-            text: "Für kleinere Teams bieten wir eine kompakte Kaffeelösung, die zuverlässig in den täglichen Büroalltag passt.",
-            price: "Individuelles Angebot"
-        },
+    if(size === "small"){
 
-        medium: {
-            title: "Kaffeelösung für 20–50 Mitarbeiter",
-            text: "Für Unternehmen dieser Größe empfehlen wir eine leistungsfähige Kaffeelösung für den regelmäßigen täglichen Kaffeegenuss.",
-            price: "Individuelles Angebot"
-        },
+        result.innerHTML = `
+            <div class="config-result-content">
 
-        large: {
-            title: "Kaffeelösung für 50–100 Mitarbeiter",
-            text: "Bei größeren Teams kommt es besonders auf Leistung und Zuverlässigkeit an. Wir wählen die passende Lösung entsprechend Ihrem tatsächlichen Bedarf.",
-            price: "Individuelles Angebot"
-        },
-
-        enterprise: {
-            title: "Individuelle Kaffeelösung",
-            text: "Für Unternehmen mit mehr als 100 Mitarbeitern planen wir die Kaffeelösung individuell – passend zu Mitarbeiterzahl, Verbrauch und Standort.",
-            price: "Auf Anfrage"
-        }
-
-    };
-
-
-    const selected = solutions[size];
-
-
-    result.innerHTML = `
-
-        <div class="config-result-content">
-
-            <span class="config-label">
-                IHRE PASSENDE KAFFEELÖSUNG
-            </span>
-
-            <h3>
-                ${selected.title}
-            </h3>
-
-            <p>
-                ${selected.text}
-            </p>
-
-
-            <div class="config-features">
-
-                <div>
-                    <i data-lucide="coffee"></i>
-                    <span>Hochwertiger Kaffee</span>
-                </div>
-
-                <div>
-                    <i data-lucide="wrench"></i>
-                    <span>Wartung & Service</span>
-                </div>
-
-                <div>
-                    <i data-lucide="package"></i>
-                    <span>Regelmäßige Versorgung</span>
-                </div>
-
-                <div>
-                    <i data-lucide="credit-card"></i>
-                    <span>Modernes Bezahlen</span>
-                </div>
-
-            </div>
-
-
-            <div class="config-price">
-
-                <span>Ihre Investition</span>
-
-                <strong>
-                    ${selected.price}
-                </strong>
-
-                <small>
-                    Abhängig von Ausstattung, Nutzung und Verbrauch.
-                </small>
-
-            </div>
-
-
-            <a href="#kontakt" class="btn-gold">
-                Kaffeelösung anfragen
-                <span>→</span>
-            </a>
-
-        </div>
-
-<div class="config-visual">
-
-            <div class="coffee-machine-placeholder">
-
-                <i data-lucide="coffee"></i>
-
-                <span>
-                    BEISPIELDARSTELLUNG
+                <span class="config-label">
+                    IHRE PASSENDE KAFFEELÖSUNG
                 </span>
 
-                <strong>
-                    Moderne Kaffeelösung
-                </strong>
+                <h3>Kompakte Kaffeelösung</h3>
 
-                <small>
-                    Das tatsächliche Maschinenmodell
-                    kann je nach Bedarf variieren.
-                </small>
+                <p>
+                    Für kleinere Teams bieten wir eine kompakte
+                    Kaffeelösung für den täglichen Büroalltag.
+                </p>
+
+                <div class="config-features">
+
+                    <div>
+                        <i data-lucide="coffee"></i>
+                        <span>Hochwertiger Kaffee</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="wrench"></i>
+                        <span>Wartung & Service</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="package"></i>
+                        <span>Regelmäßige Versorgung</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="credit-card"></i>
+                        <span>Modernes Bezahlen</span>
+                    </div>
+
+                </div>
+
+                <div class="config-price">
+                    <span>Ihre Investition</span>
+                    <strong>Individuelles Angebot</strong>
+                    <small>
+                        Abhängig von Ausstattung, Nutzung und Verbrauch.
+                    </small>
+                </div>
+
+                <a href="#kontakt" class="btn-gold">
+                    Kaffeelösung anfragen →
+                </a>
 
             </div>
 
-        </div>
+            <div class="config-visual">
 
-    `;
+                <div class="coffee-machine-placeholder">
 
+                    <i data-lucide="coffee"></i>
 
-    /* Ergebnis sichtbar machen */
+                    <span>BEISPIELDARSTELLUNG</span>
 
-    result.classList.add("visible");
+                    <strong>
+                        Moderne Kaffeelösung
+                    </strong>
 
+                    <small>
+                        Das tatsächliche Maschinenmodell
+                        kann je nach Bedarf variieren.
+                    </small>
 
-    /* Lucide Icons neu laden */
+                </div>
 
-    if (typeof lucide !== "undefined") {
-        lucide.createIcons();
+            </div>
+        `;
+
     }
 
 
-    /* Zum Ergebnis scrollen */
+    if(size === "medium"){
+
+        result.innerHTML = `
+            <div class="config-result-content">
+
+                <span class="config-label">
+                    IHRE PASSENDE KAFFEELÖSUNG
+                </span>
+
+                <h3>Kaffeelösung für 20–50 Mitarbeiter</h3>
+
+                <p>
+                    Eine leistungsfähige Kaffeelösung für Unternehmen
+                    mit regelmäßigem täglichen Kaffeeverbrauch.
+                </p>
+
+                <div class="config-features">
+
+                    <div>
+                        <i data-lucide="coffee"></i>
+                        <span>Hochwertiger Kaffee</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="wrench"></i>
+                        <span>Wartung & Service</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="package"></i>
+                        <span>Regelmäßige Versorgung</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="credit-card"></i>
+                        <span>Modernes Bezahlen</span>
+                    </div>
+
+                </div>
+
+                <div class="config-price">
+                    <span>Ihre Investition</span>
+                    <strong>Individuelles Angebot</strong>
+                    <small>
+                        Abhängig von Ausstattung, Nutzung und Verbrauch.
+                    </small>
+                </div>
+
+                <a href="#kontakt" class="btn-gold">
+                    Kaffeelösung anfragen →
+                </a>
+
+            </div>
+
+            <div class="config-visual">
+
+                <div class="coffee-machine-placeholder">
+
+                    <i data-lucide="coffee"></i>
+
+                    <span>BEISPIELDARSTELLUNG</span>
+
+                    <strong>
+                        Moderne Kaffeelösung
+                    </strong>
+
+                    <small>
+                        Das tatsächliche Maschinenmodell
+                        kann je nach Bedarf variieren.
+                    </small>
+
+                </div>
+
+            </div>
+        `;
+
+    }
+
+
+    if(size === "large"){
+
+        result.innerHTML = `
+            <div class="config-result-content">
+
+                <span class="config-label">
+                    IHRE PASSENDE KAFFEELÖSUNG
+                </span>
+
+                <h3>Kaffeelösung für 50–100 Mitarbeiter</h3>
+
+                <p>
+                    Für größere Teams empfehlen wir eine leistungsfähige
+                    Lösung, abgestimmt auf den tatsächlichen Bedarf.
+                </p>
+
+                <div class="config-features">
+
+                    <div>
+                        <i data-lucide="coffee"></i>
+                        <span>Hochwertiger Kaffee</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="wrench"></i>
+                        <span>Wartung & Service</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="package"></i>
+                        <span>Regelmäßige Versorgung</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="credit-card"></i>
+                        <span>Modernes Bezahlen</span>
+                    </div>
+
+                </div>
+
+                <div class="config-price">
+                    <span>Ihre Investition</span>
+                    <strong>Individuelles Angebot</strong>
+                    <small>
+                        Abhängig von Ausstattung, Nutzung und Verbrauch.
+                    </small>
+                </div>
+
+                <a href="#kontakt" class="btn-gold">
+                    Kaffeelösung anfragen →
+                </a>
+
+            </div>
+
+            <div class="config-visual">
+
+                <div class="coffee-machine-placeholder">
+
+                    <i data-lucide="coffee"></i>
+
+                    <span>BEISPIELDARSTELLUNG</span>
+
+                    <strong>
+                        Moderne Kaffeelösung
+                    </strong>
+
+                    <small>
+                        Das tatsächliche Maschinenmodell
+                        kann je nach Bedarf variieren.
+                    </small>
+
+                </div>
+
+            </div>
+        `;
+
+    }
+
+
+    if(size === "enterprise"){
+
+        result.innerHTML = `
+            <div class="config-result-content">
+
+                <span class="config-label">
+                    IHRE PASSENDE KAFFEELÖSUNG
+                </span>
+
+                <h3>Individuelle Kaffeelösung</h3>
+
+                <p>
+                    Für Unternehmen mit mehr als 100 Mitarbeitern
+                    planen wir die Kaffeelösung individuell.
+                </p>
+
+                <div class="config-features">
+
+                    <div>
+                        <i data-lucide="coffee"></i>
+                        <span>Hochwertiger Kaffee</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="wrench"></i>
+                        <span>Wartung & Service</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="package"></i>
+                        <span>Regelmäßige Versorgung</span>
+                    </div>
+
+                    <div>
+                        <i data-lucide="credit-card"></i>
+                        <span>Modernes Bezahlen</span>
+                    </div>
+
+                </div>
+
+                <div class="config-price">
+                    <span>Ihre Investition</span>
+                    <strong>Auf Anfrage</strong>
+                    <small>
+                        Individuell abgestimmt auf Ihren Standort.
+                    </small>
+                </div>
+
+                <a href="#kontakt" class="btn-gold">
+                    Kaffeelösung anfragen →
+                </a>
+
+            </div>
+
+            <div class="config-visual">
+
+                <div class="coffee-machine-placeholder">
+
+                    <i data-lucide="coffee"></i>
+
+                    <span>BEISPIELDARSTELLUNG</span>
+
+                    <strong>
+                        Moderne Kaffeelösung
+                    </strong>
+
+                    <small>
+                        Das tatsächliche Maschinenmodell
+                        kann je nach Bedarf variieren.
+                    </small>
+
+                </div>
+
+            </div>
+        `;
+
+    }
+
+
+    result.classList.add("visible");
+
+    if(typeof lucide !== "undefined"){
+        lucide.createIcons();
+    }
 
     setTimeout(() => {
 
         result.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
+            behavior:"smooth",
+            block:"nearest"
         });
 
-    }, 150);
+    },150);
 
 }
+
 // ==========================
 // SCROLL ANIMATION
 // ==========================
