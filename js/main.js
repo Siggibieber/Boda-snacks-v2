@@ -481,3 +481,80 @@ window.addEventListener("load", () => {
     }
 
 });
+
+// ==========================
+// KONFIGURATOR → KONTAKTFORMULAR
+// ==========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const configButton =
+        document.querySelector("#configComplete .btn-gold");
+
+    const contactMessage =
+        document.getElementById("contactMessage");
+
+
+    if (!configButton || !contactMessage) {
+        return;
+    }
+
+
+    configButton.addEventListener("click", () => {
+
+        const config =
+            window.bodaCoffeeConfig;
+
+
+        if (!config) {
+            return;
+        }
+
+
+        const drinks =
+            config.drinks && config.drinks.length
+                ? config.drinks.join(", ")
+                : "Keine Angabe";
+
+
+        const extras =
+            config.extras && config.extras.length
+                ? config.extras.join(", ")
+                : "Keine zusätzlichen Leistungen";
+
+
+        contactMessage.value =
+`KAFFEE-KONFIGURATOR
+
+Mitarbeiter: ${config.employees || "Keine Angabe"}
+Einsatzort: ${config.location || "Keine Angabe"}
+Getränke: ${drinks}
+Tassen pro Tag: ${config.cups || "Keine Angabe"}
+Ausgabe: ${config.container || "Keine Angabe"}
+Zusatzleistungen: ${extras}
+
+Ich interessiere mich für eine passende Kaffeelösung von BODA Snacks.`;
+
+
+        // Zum Kontaktformular springen
+
+        const kontakt =
+            document.getElementById("kontakt");
+
+
+        if (kontakt) {
+
+            setTimeout(() => {
+
+                kontakt.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 100);
+
+        }
+
+    });
+
+});
