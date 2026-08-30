@@ -2506,3 +2506,34 @@ opacity:0;
     line-height: 1.6;
     opacity: 0.7;
 }
+
+.config-service-price {
+    display: block;
+    width: 100%;
+    margin: 30px 0;
+    padding: 22px;
+    text-align: center;
+    border: 1px solid rgba(212, 167, 55, 0.35);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.config-service-price span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.config-service-price strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.config-service-price small {
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.7;
+}
