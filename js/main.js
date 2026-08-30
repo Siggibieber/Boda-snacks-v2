@@ -1,344 +1,377 @@
-function showConfig(size){
+// ==========================
+// BODA KAFFEE KONFIGURATOR
+// ==========================
 
-    const result = document.getElementById("configResult");
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (!result) {
-        console.log("configResult nicht gefunden!");
+    const steps = document.querySelectorAll(".config-step");
+
+    const nextButton = document.getElementById("configNext");
+
+    const backButton = document.getElementById("configBack");
+
+    const progressFill = document.getElementById("progressFill");
+
+    const stepLabel = document.getElementById("stepLabel");
+
+    const progressPercent = document.getElementById("progressPercent");
+
+    const completeBox = document.getElementById("configComplete");
+
+
+    // Wenn der neue Konfigurator nicht vorhanden ist:
+    // nichts weiter ausführen.
+
+    if (
+        !steps.length ||
+        !nextButton ||
+        !backButton
+    ) {
         return;
     }
 
-    if(size === "small"){
 
-        result.innerHTML = `
-            <div class="config-result-content">
+    // ==========================
+    // EINSTELLUNGEN
+    // ==========================
 
-                <span class="config-label">
-                    IHRE PASSENDE KAFFEELÖSUNG
-                </span>
+    let currentStep = 1;
 
-                <h3>Kompakte Kaffeelösung</h3>
+    const totalSteps = steps.length;
 
-                <p>
-                    Für kleinere Teams bieten wir eine kompakte
-                    Kaffeelösung für den täglichen Büroalltag.
-                </p>
 
-                <div class="config-features">
+    // ==========================
+    // GESAMMELTE DATEN
+    // ==========================
 
-                    <div>
-                        <i data-lucide="coffee"></i>
-                        <span>Hochwertiger Kaffee</span>
-                    </div>
+    const configData = {
 
-                    <div>
-                        <i data-lucide="wrench"></i>
-                        <span>Wartung & Service</span>
-                    </div>
+        employees: "",
 
-                    <div>
-                        <i data-lucide="package"></i>
-                        <span>Regelmäßige Versorgung</span>
-                    </div>
+        location: "",
 
-                    <div>
-                        <i data-lucide="credit-card"></i>
-                        <span>Modernes Bezahlen</span>
-                    </div>
+        drinks: [],
 
-                </div>
+        cups: "",
 
-                <div class="config-price">
-                    <span>Ihre Investition</span>
-                    <strong>Individuelles Angebot</strong>
-                    <small>
-                        Abhängig von Ausstattung, Nutzung und Verbrauch.
-                    </small>
-                </div>
+        container: "",
 
-                <a href="#kontakt" class="btn-gold">
-                    Kaffeelösung anfragen →
-                </a>
+        extras: []
 
-            </div>
+    };
 
-            <div class="config-visual">
 
-                <div class="coffee-machine-placeholder">
+    // ==========================
+    // AUSWAHL-BUTTONS
+    // ==========================
 
-                    <i data-lucide="coffee"></i>
+    const options =
+        document.querySelectorAll(".config-option");
 
-                    <span>BEISPIELDARSTELLUNG</span>
 
-                    <strong>
-                        Moderne Kaffeelösung
-                    </strong>
+    options.forEach(option => {
 
-                    <small>
-                        Das tatsächliche Maschinenmodell
-                        kann je nach Bedarf variieren.
-                    </small>
+        option.addEventListener("click", () => {
 
-                </div>
+            const group =
+                option.dataset.group;
 
-            </div>
-        `;
+            const value =
+                option.dataset.value;
 
-    }
 
+            // Andere Auswahl derselben Gruppe entfernen
 
-    if(size === "medium"){
+            document
+                .querySelectorAll(
+                    `.config-option[data-group="${group}"]`
+                )
+                .forEach(item => {
 
-        result.innerHTML = `
-            <div class="config-result-content">
+                    item.classList.remove("selected");
 
-                <span class="config-label">
-                    IHRE PASSENDE KAFFEELÖSUNG
-                </span>
+                });
 
-                <h3>Kaffeelösung für 20–50 Mitarbeiter</h3>
 
-                <p>
-                    Eine leistungsfähige Kaffeelösung für Unternehmen
-                    mit regelmäßigem täglichen Kaffeeverbrauch.
-                </p>
+            // Aktuelle Auswahl markieren
 
-                <div class="config-features">
+            option.classList.add("selected");
 
-                    <div>
-                        <i data-lucide="coffee"></i>
-                        <span>Hochwertiger Kaffee</span>
-                    </div>
 
-                    <div>
-                        <i data-lucide="wrench"></i>
-                        <span>Wartung & Service</span>
-                    </div>
+            // Auswahl speichern
 
-                    <div>
-                        <i data-lucide="package"></i>
-                        <span>Regelmäßige Versorgung</span>
-                    </div>
+            configData[group] = value;
 
-                    <div>
-                        <i data-lucide="credit-card"></i>
-                        <span>Modernes Bezahlen</span>
-                    </div>
 
-                </div>
+            // Kurz warten,
+            // damit die Auswahl sichtbar wird.
 
-                <div class="config-price">
-                    <span>Ihre Investition</span>
-                    <strong>Individuelles Angebot</strong>
-                    <small>
-                        Abhängig von Ausstattung, Nutzung und Verbrauch.
-                    </small>
-                </div>
+            setTimeout(() => {
 
-                <a href="#kontakt" class="btn-gold">
-                    Kaffeelösung anfragen →
-                </a>
+                if (currentStep < totalSteps) {
 
-            </div>
+                    nextStep();
 
-            <div class="config-visual">
+                }
 
-                <div class="coffee-machine-placeholder">
+            }, 250);
 
-                    <i data-lucide="coffee"></i>
-
-                    <span>BEISPIELDARSTELLUNG</span>
-
-                    <strong>
-                        Moderne Kaffeelösung
-                    </strong>
-
-                    <small>
-                        Das tatsächliche Maschinenmodell
-                        kann je nach Bedarf variieren.
-                    </small>
-
-                </div>
-
-            </div>
-        `;
-
-    }
-
-
-    if(size === "large"){
-
-        result.innerHTML = `
-            <div class="config-result-content">
-
-                <span class="config-label">
-                    IHRE PASSENDE KAFFEELÖSUNG
-                </span>
-
-                <h3>Kaffeelösung für 50–100 Mitarbeiter</h3>
-
-                <p>
-                    Für größere Teams empfehlen wir eine leistungsfähige
-                    Lösung, abgestimmt auf den tatsächlichen Bedarf.
-                </p>
-
-                <div class="config-features">
-
-                    <div>
-                        <i data-lucide="coffee"></i>
-                        <span>Hochwertiger Kaffee</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="wrench"></i>
-                        <span>Wartung & Service</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="package"></i>
-                        <span>Regelmäßige Versorgung</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="credit-card"></i>
-                        <span>Modernes Bezahlen</span>
-                    </div>
-
-                </div>
-
-                <div class="config-price">
-                    <span>Ihre Investition</span>
-                    <strong>Individuelles Angebot</strong>
-                    <small>
-                        Abhängig von Ausstattung, Nutzung und Verbrauch.
-                    </small>
-                </div>
-
-                <a href="#kontakt" class="btn-gold">
-                    Kaffeelösung anfragen →
-                </a>
-
-            </div>
-
-            <div class="config-visual">
-
-                <div class="coffee-machine-placeholder">
-
-                    <i data-lucide="coffee"></i>
-
-                    <span>BEISPIELDARSTELLUNG</span>
-
-                    <strong>
-                        Moderne Kaffeelösung
-                    </strong>
-
-                    <small>
-                        Das tatsächliche Maschinenmodell
-                        kann je nach Bedarf variieren.
-                    </small>
-
-                </div>
-
-            </div>
-        `;
-
-    }
-
-
-    if(size === "enterprise"){
-
-        result.innerHTML = `
-            <div class="config-result-content">
-
-                <span class="config-label">
-                    IHRE PASSENDE KAFFEELÖSUNG
-                </span>
-
-                <h3>Individuelle Kaffeelösung</h3>
-
-                <p>
-                    Für Unternehmen mit mehr als 100 Mitarbeitern
-                    planen wir die Kaffeelösung individuell.
-                </p>
-
-                <div class="config-features">
-
-                    <div>
-                        <i data-lucide="coffee"></i>
-                        <span>Hochwertiger Kaffee</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="wrench"></i>
-                        <span>Wartung & Service</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="package"></i>
-                        <span>Regelmäßige Versorgung</span>
-                    </div>
-
-                    <div>
-                        <i data-lucide="credit-card"></i>
-                        <span>Modernes Bezahlen</span>
-                    </div>
-
-                </div>
-
-                <div class="config-price">
-                    <span>Ihre Investition</span>
-                    <strong>Auf Anfrage</strong>
-                    <small>
-                        Individuell abgestimmt auf Ihren Standort.
-                    </small>
-                </div>
-
-                <a href="#kontakt" class="btn-gold">
-                    Kaffeelösung anfragen →
-                </a>
-
-            </div>
-
-            <div class="config-visual">
-
-                <div class="coffee-machine-placeholder">
-
-                    <i data-lucide="coffee"></i>
-
-                    <span>BEISPIELDARSTELLUNG</span>
-
-                    <strong>
-                        Moderne Kaffeelösung
-                    </strong>
-
-                    <small>
-                        Das tatsächliche Maschinenmodell
-                        kann je nach Bedarf variieren.
-                    </small>
-
-                </div>
-
-            </div>
-        `;
-
-    }
-
-
-    result.classList.add("visible");
-
-    if(typeof lucide !== "undefined"){
-        lucide.createIcons();
-    }
-
-    setTimeout(() => {
-
-        result.scrollIntoView({
-            behavior:"smooth",
-            block:"nearest"
         });
 
-    },150);
+    });
 
-}
+
+    // ==========================
+    // CHECKBOXEN
+    // ==========================
+
+    const checkboxes =
+        document.querySelectorAll(
+            '.config-checkbox input[type="checkbox"]'
+        );
+
+
+    checkboxes.forEach(checkbox => {
+
+        checkbox.addEventListener("change", () => {
+
+            const group =
+                checkbox.name;
+
+
+            const checked =
+                document.querySelectorAll(
+                    `input[name="${group}"]:checked`
+                );
+
+
+            const values = [];
+
+
+            checked.forEach(item => {
+
+                values.push(item.value);
+
+            });
+
+
+            if (group === "drinks") {
+
+                configData.drinks =
+                    values;
+
+            }
+
+
+            if (group === "extras") {
+
+                configData.extras =
+                    values;
+
+            }
+
+        });
+
+    });
+
+
+    // ==========================
+    // SCHRITT ANZEIGEN
+    // ==========================
+
+    function showStep(step) {
+
+        steps.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        const selectedStep =
+            document.querySelector(
+                `.config-step[data-step="${step}"]`
+            );
+
+
+        if (selectedStep) {
+
+            selectedStep.classList.add("active");
+
+        }
+
+
+        currentStep = step;
+
+
+        updateProgress();
+
+
+        backButton.disabled =
+            currentStep === 1;
+
+
+        if (currentStep === totalSteps) {
+
+            nextButton.textContent =
+                "Anfrage vorbereiten →";
+
+        } else {
+
+            nextButton.textContent =
+                "Weiter →";
+
+        }
+
+
+        // Zum Konfigurator scrollen
+
+        const configurator =
+            document.getElementById(
+                "konfigurator"
+            );
+
+
+        if (configurator) {
+
+            configurator.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "start"
+
+            });
+
+        }
+
+    }
+
+
+    // ==========================
+    // WEITER
+    // ==========================
+
+    function nextStep() {
+
+        if (currentStep < totalSteps) {
+
+            showStep(
+                currentStep + 1
+            );
+
+        } else {
+
+            finishConfigurator();
+
+        }
+
+    }
+
+
+    // ==========================
+    // ZURÜCK
+    // ==========================
+
+    function previousStep() {
+
+        if (currentStep > 1) {
+
+            showStep(
+                currentStep - 1
+            );
+
+        }
+
+    }
+
+
+    // ==========================
+    // FORTSCHRITT
+    // ==========================
+
+    function updateProgress() {
+
+        const percentage =
+            Math.round(
+                (currentStep / totalSteps) * 100
+            );
+
+
+        progressFill.style.width =
+            percentage + "%";
+
+
+        progressPercent.textContent =
+            percentage + "%";
+
+
+        stepLabel.textContent =
+            `Schritt ${currentStep} von ${totalSteps}`;
+
+    }
+
+
+    // ==========================
+    // KONFIGURATOR ABSCHLIESSEN
+    // ==========================
+
+    function finishConfigurator() {
+
+        console.log(
+            "BODA Kaffee-Konfiguration:",
+            configData
+        );
+
+
+        // Daten global speichern
+
+        window.bodaCoffeeConfig =
+            configData;
+
+
+        // Abschluss anzeigen
+
+        completeBox.classList.add(
+            "visible"
+        );
+
+
+        // Zum Abschluss scrollen
+
+        completeBox.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    }
+
+
+    // ==========================
+    // BUTTONS
+    // ==========================
+
+    nextButton.addEventListener(
+        "click",
+        nextStep
+    );
+
+
+    backButton.addEventListener(
+        "click",
+        previousStep
+    );
+
+
+    // ==========================
+    // START
+    // ==========================
+
+    updateProgress();
+
+});
 
 // ==========================
 // SCROLL ANIMATION
