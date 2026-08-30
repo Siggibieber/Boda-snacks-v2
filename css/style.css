@@ -2537,3 +2537,34 @@ opacity:0;
     line-height: 1.5;
     opacity: 0.7;
 }
+.config-service-price {
+    width: 100%;
+    max-width: 520px;
+    margin: 30px auto;
+    padding: 24px 28px;
+    text-align: center;
+    border: 1px solid rgba(212, 167, 55, 0.35);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.config-service-price span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.config-service-price strong {
+    display: block;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.config-service-price small {
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.7;
+}
