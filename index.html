@@ -275,131 +275,872 @@ content="Premium Kaffeeautomaten für Unternehmen. Kostenlos aufgestellt. Voller
 
 </section>
 
-<section class="configurator">
+<section class="configurator" id="konfigurator">
 
     <div class="container">
 
+        <!-- =========================
+             HEADER
+        ========================== -->
+
         <div class="section-title">
-            <span>Konfigurator</span>
-            <h2>Welche Lösung passt zu Ihrem Unternehmen?</h2>
+
+            <span>KAFFEE-KONFIGURATOR</span>
+
+            <h2>
+                Welche Kaffeelösung passt zu Ihrem Unternehmen?
+            </h2>
+
             <p>
-                Wählen Sie die Anzahl Ihrer Mitarbeiter und entdecken Sie
-                die passende Kaffeelösung.
+                Beantworten Sie ein paar kurze Fragen.
+                Wir ermitteln, welche Lösung zu Ihrem Unternehmen passt.
             </p>
-        </div>
-
-
-        <div class="config-buttons">
-
-            <button onclick="showConfig('small')">
-                <strong>1–20</strong>
-                <span>Mitarbeiter</span>
-            </button>
-
-            <button onclick="showConfig('medium')">
-                <strong>20–50</strong>
-                <span>Mitarbeiter</span>
-            </button>
-
-            <button onclick="showConfig('large')">
-                <strong>50–100</strong>
-                <span>Mitarbeiter</span>
-            </button>
-
-            <button onclick="showConfig('enterprise')">
-                <strong>100+</strong>
-                <span>Mitarbeiter</span>
-            </button>
 
         </div>
 
 
-        <div id="configResult" class="config-result">
+        <!-- =========================
+             KONFIGURATOR GRID
+        ========================== -->
 
-            <div class="config-result-content">
-
-                <span class="config-label">
-                    IHRE PASSENDE KAFFEELÖSUNG
-                </span>
-
-                <h3 id="configTitle">
-                    Wählen Sie Ihre Unternehmensgröße
-                </h3>
-
-                <p id="configText">
-                    Wir zeigen Ihnen anschließend eine passende
-                    Kaffeelösung für Ihr Unternehmen.
-                </p>
+        <div class="configurator-layout">
 
 
-                <div class="config-features">
+            <!-- =========================
+                 LINKER BEREICH
+            ========================== -->
 
-                    <div>
-                        <i data-lucide="coffee"></i>
-                        <span>Hochwertiger Kaffee</span>
+            <div class="configurator-form">
+
+
+                <!-- FORTSCHRITT -->
+
+                <div class="config-progress">
+
+                    <div class="progress-top">
+
+                        <span id="stepLabel">
+                            Schritt 1 von 6
+                        </span>
+
+                        <span id="progressPercent">
+                            17%
+                        </span>
+
                     </div>
 
-                    <div>
-                        <i data-lucide="wrench"></i>
-                        <span>Wartung & Service</span>
-                    </div>
+                    <div class="progress-bar">
 
-                    <div>
-                        <i data-lucide="package"></i>
-                        <span>Regelmäßige Versorgung</span>
-                    </div>
+                        <div
+                            id="progressFill"
+                            class="progress-fill">
+                        </div>
 
-                    <div>
-                        <i data-lucide="credit-card"></i>
-                        <span>Modernes Bezahlen</span>
                     </div>
 
                 </div>
 
 
-                <div class="config-price">
+                <!-- =========================
+                     SCHRITT 1
+                ========================== -->
 
-                    <span>Ihre Investition</span>
+                <div
+                    class="config-step active"
+                    data-step="1">
 
-                    <strong id="configPrice">
-                        Individuelles Angebot
-                    </strong>
+                    <span class="step-number">
+                        01
+                    </span>
 
-                    <small>
-                        Abhängig von Ausstattung, Nutzung und Verbrauch.
-                    </small>
+                    <h3>
+                        Wie viele Mitarbeiter hat Ihr Unternehmen?
+                    </h3>
+
+                    <p class="step-description">
+                        Damit können wir den ungefähren Bedarf besser einschätzen.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="employees"
+                            data-value="1–20">
+
+                            <strong>1–20</strong>
+
+                            <span>
+                                Mitarbeiter
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="employees"
+                            data-value="20–50">
+
+                            <strong>20–50</strong>
+
+                            <span>
+                                Mitarbeiter
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="employees"
+                            data-value="50–100">
+
+                            <strong>50–100</strong>
+
+                            <span>
+                                Mitarbeiter
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="employees"
+                            data-value="100+">
+
+                            <strong>100+</strong>
+
+                            <span>
+                                Mitarbeiter
+                            </span>
+
+                        </button>
+
+                    </div>
 
                 </div>
 
 
-                <a href="#kontakt" class="btn-gold">
-                    Kaffeelösung anfragen
-                    <span>→</span>
-                </a>
+                <!-- =========================
+                     SCHRITT 2
+                ========================== -->
+
+                <div
+                    class="config-step"
+                    data-step="2">
+
+                    <span class="step-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Wo soll die Kaffeelösung eingesetzt werden?
+                    </h3>
+
+                    <p class="step-description">
+                        Wo wird der Kaffee hauptsächlich getrunken?
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="location"
+                            data-value="Büro">
+
+                            <strong>Büro</strong>
+
+                            <span>
+                                Büro & Verwaltung
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="location"
+                            data-value="Produktion">
+
+                            <strong>Produktion</strong>
+
+                            <span>
+                                Werkstatt & Produktion
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="location"
+                            data-value="Empfang">
+
+                            <strong>Empfang</strong>
+
+                            <span>
+                                Kunden & Besucher
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="location"
+                            data-value="Pausenraum">
+
+                            <strong>Pausenraum</strong>
+
+                            <span>
+                                Mitarbeiterbereich
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="location"
+                            data-value="Sonstiges">
+
+                            <strong>Sonstiges</strong>
+
+                            <span>
+                                Anderer Einsatzort
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SCHRITT 3
+                ========================== -->
+
+                <div
+                    class="config-step"
+                    data-step="3">
+
+                    <span class="step-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Welche Getränke sollen angeboten werden?
+                    </h3>
+
+                    <p class="step-description">
+                        Sie können mehrere Optionen auswählen.
+                    </p>
+
+
+                    <div class="checkbox-grid">
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Kaffee / Café Crema">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Kaffee / Café Crema
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Espresso">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Espresso
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Cappuccino">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Cappuccino
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Latte Macchiato">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Latte Macchiato
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Heiße Schokolade">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Heiße Schokolade
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="drinks"
+                                value="Heißwasser">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Heißwasser
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SCHRITT 4
+                ========================== -->
+
+                <div
+                    class="config-step"
+                    data-step="4">
+
+                    <span class="step-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Wie viele Tassen werden ungefähr täglich getrunken?
+                    </h3>
+
+                    <p class="step-description">
+                        Eine grobe Einschätzung reicht völlig aus.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="cups"
+                            data-value="Unter 20">
+
+                            <strong>&lt; 20</strong>
+
+                            <span>
+                                Tassen pro Tag
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="cups"
+                            data-value="20–50">
+
+                            <strong>20–50</strong>
+
+                            <span>
+                                Tassen pro Tag
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="cups"
+                            data-value="50–100">
+
+                            <strong>50–100</strong>
+
+                            <span>
+                                Tassen pro Tag
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="cups"
+                            data-value="100+">
+
+                            <strong>100+</strong>
+
+                            <span>
+                                Tassen pro Tag
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SCHRITT 5
+                ========================== -->
+
+                <div
+                    class="config-step"
+                    data-step="5">
+
+                    <span class="step-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Was soll ausgegeben werden?
+                    </h3>
+
+                    <p class="step-description">
+                        Wählen Sie die gewünschte Ausgabeform.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="container"
+                            data-value="Tassen">
+
+                            <strong>Tassen</strong>
+
+                            <span>
+                                Mehrweg
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="container"
+                            data-value="Becher">
+
+                            <strong>Becher</strong>
+
+                            <span>
+                                Einweg
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="config-option"
+                            data-group="container"
+                            data-value="Beides">
+
+                            <strong>Beides</strong>
+
+                            <span>
+                                Je nach Situation
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SCHRITT 6
+                ========================== -->
+
+                <div
+                    class="config-step"
+                    data-step="6">
+
+                    <span class="step-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Was wünschen Sie zusätzlich?
+                    </h3>
+
+                    <p class="step-description">
+                        Wählen Sie die Leistungen, die für Sie interessant sind.
+                    </p>
+
+
+                    <div class="checkbox-grid">
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="extras"
+                                value="Kaffeeversorgung">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Kaffeeversorgung
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="extras"
+                                value="Reinigung & Wartung">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Reinigung & Wartung
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="extras"
+                                value="Regelmäßige Befüllung">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Regelmäßige Befüllung
+                            </span>
+
+                        </label>
+
+
+                        <label class="config-checkbox">
+
+                            <input
+                                type="checkbox"
+                                name="extras"
+                                value="Bezahlsystem">
+
+                            <span class="checkmark">
+                                ✓
+                            </span>
+
+                            <span class="checkbox-text">
+                                Bezahlsystem
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     NAVIGATION
+                ========================== -->
+
+                <div class="config-navigation">
+
+                    <button
+                        type="button"
+                        id="configBack"
+                        class="config-back"
+                        disabled>
+
+                        ← Zurück
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="configNext"
+                        class="config-next">
+
+                        Weiter →
+
+                    </button>
+
+                </div>
+
 
             </div>
 
 
-            <div class="config-visual">
+            <!-- =========================
+                 RECHTE BODA SEITE
+            ========================== -->
 
-                <div class="coffee-machine-placeholder">
+            <aside class="configurator-summary">
 
-                    <i data-lucide="coffee"></i>
+                <div class="summary-inner">
 
-                    <span>BEISPIELDARSTELLUNG</span>
+                    <span class="summary-eyebrow">
+                        IHRE BODA KAFFEELÖSUNG
+                    </span>
 
-                    <strong>
-                        Moderne Kaffeelösung
-                    </strong>
 
-                    <small>
-                        Das tatsächliche Maschinenmodell
-                        kann je nach Bedarf variieren.
-                    </small>
+                    <h3>
+                        Mehr als nur Kaffee.
+                    </h3>
+
+
+                    <p class="summary-intro">
+                        Wir kümmern uns um die komplette Kaffeelösung,
+                        damit Sie sich um nichts kümmern müssen.
+                    </p>
+
+
+                    <div class="summary-points">
+
+                        <div class="summary-point">
+
+                            <div class="summary-icon">
+                                <i data-lucide="coffee"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Kaffeeversorgung
+                                </strong>
+
+                                <span>
+                                    Hochwertiger Kaffee & Zubehör
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-point">
+
+                            <div class="summary-icon">
+                                <i data-lucide="truck"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Aufstellung
+                                </strong>
+
+                                <span>
+                                    Lieferung & Einrichtung
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-point">
+
+                            <div class="summary-icon">
+                                <i data-lucide="wrench"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Wartung & Service
+                                </strong>
+
+                                <span>
+                                    Wir kümmern uns um den Betrieb
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-point">
+
+                            <div class="summary-icon">
+                                <i data-lucide="headphones"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Persönlicher Ansprechpartner
+                                </strong>
+
+                                <span>
+                                    Schnelle Hilfe bei Fragen & Störungen
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-badge">
+
+                        <strong>
+                            Kein Aufwand.
+                        </strong>
+
+                        <span>
+                            Kein Risiko.
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-visual">
+
+                        <div class="coffee-cup">
+                            <div class="coffee-liquid"></div>
+                            <div class="coffee-steam steam-one"></div>
+                            <div class="coffee-steam steam-two"></div>
+                        </div>
+
+                        <div class="coffee-beans">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="summary-bottom">
+                        Ihre Angaben helfen uns dabei,
+                        die passende Lösung für Ihren Standort vorzubereiten.
+                    </p>
 
                 </div>
 
+            </aside>
+
+        </div>
+
+
+        <!-- =========================
+             ABSCHLUSS
+        ========================== -->
+
+        <div
+            class="config-complete"
+            id="configComplete">
+
+            <div class="complete-icon">
+                ✓
             </div>
+
+
+            <span>
+                FAST GESCHAFFT
+            </span>
+
+
+            <h3>
+                Ihre Kaffeelösung ist vorbereitet.
+            </h3>
+
+
+            <p>
+                Auf Basis Ihrer Angaben können wir jetzt
+                die passende Lösung für Ihr Unternehmen vorbereiten.
+            </p>
+
+
+            <a
+                href="#kontakt"
+                class="btn-gold">
+
+                Unverbindlich anfragen →
+
+            </a>
 
         </div>
 
