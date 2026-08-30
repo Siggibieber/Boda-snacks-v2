@@ -2395,3 +2395,60 @@ opacity:0;
 }
 
 }
+/* ===========================
+   TRUST – BODA PLATZHALTER
+=========================== */
+
+.boda-placeholder{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.boda-placeholder img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+    opacity:.55;
+
+}
+
+
+.trust-placeholder-text{
+
+    text-align:center;
+
+    margin-top:35px;
+
+}
+
+
+.trust-placeholder-text strong{
+
+    display:block;
+
+    font-size:16px;
+
+    margin-bottom:6px;
+
+}
+
+
+.trust-placeholder-text span{
+
+    display:block;
+
+    color:#999;
+
+    font-size:13px;
+
+}
