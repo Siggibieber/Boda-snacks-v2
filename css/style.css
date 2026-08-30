@@ -2452,3 +2452,24 @@ opacity:0;
     font-size:13px;
 
 }
+/* ===========================
+   TRUST LOGOS – KORREKTUR
+=========================== */
+
+.trust .logo-box.boda-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100px;
+}
+
+.trust .logo-box.boda-placeholder img {
+    width: 65px !important;
+    height: 65px !important;
+    max-width: 65px !important;
+    max-height: 65px !important;
+    object-fit: contain;
+    display: block;
+    opacity: 0.55;
+}
