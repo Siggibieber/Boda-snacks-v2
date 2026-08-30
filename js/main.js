@@ -502,58 +502,112 @@ document.addEventListener("DOMContentLoaded", () => {
 
     configButton.addEventListener("click", () => {
 
-        const config =
-            window.bodaCoffeeConfig;
+        // ==========================
+        // MITARBEITER
+        // ==========================
+
+        const employees =
+            document.querySelector(
+                '.config-option[data-group="employees"].selected'
+            );
 
 
-        if (!config) {
-            return;
-        }
+        // ==========================
+        // EINSATZORT
+        // ==========================
 
+        const location =
+            document.querySelector(
+                '.config-option[data-group="location"].selected'
+            );
+
+
+        // ==========================
+        // TASSEN PRO TAG
+        // ==========================
+
+        const cups =
+            document.querySelector(
+                '.config-option[data-group="cups"].selected'
+            );
+
+
+        // ==========================
+        // AUSGABE
+        // ==========================
+
+        const container =
+            document.querySelector(
+                '.config-option[data-group="container"].selected'
+            );
+
+
+        // ==========================
+        // GETRÄNKE
+        // ==========================
 
         const drinks =
-            config.drinks && config.drinks.length
-                ? config.drinks.join(", ")
-                : "Keine Angabe";
+            Array.from(
+                document.querySelectorAll(
+                    'input[name="drinks"]:checked'
+                )
+            ).map(input => input.value);
 
+
+        // ==========================
+        // ZUSATZLEISTUNGEN
+        // ==========================
 
         const extras =
-            config.extras && config.extras.length
-                ? config.extras.join(", ")
-                : "Keine zusätzlichen Leistungen";
+            Array.from(
+                document.querySelectorAll(
+                    'input[name="extras"]:checked'
+                )
+            ).map(input => input.value);
 
 
-        contactMessage.value =
+        // ==========================
+        // TEXT
+        // ==========================
+
+        const message =
 `KAFFEE-KONFIGURATOR
 
-Mitarbeiter: ${config.employees || "Keine Angabe"}
-Einsatzort: ${config.location || "Keine Angabe"}
-Getränke: ${drinks}
-Tassen pro Tag: ${config.cups || "Keine Angabe"}
-Ausgabe: ${config.container || "Keine Angabe"}
-Zusatzleistungen: ${extras}
+Mitarbeiter: ${employees?.dataset.value || "Keine Angabe"}
+
+Einsatzort: ${location?.dataset.value || "Keine Angabe"}
+
+Getränke: ${
+    drinks.length
+        ? drinks.join(", ")
+        : "Keine Angabe"
+}
+
+Tassen pro Tag: ${cups?.dataset.value || "Keine Angabe"}
+
+Ausgabe: ${container?.dataset.value || "Keine Angabe"}
+
+Zusatzleistungen: ${
+    extras.length
+        ? extras.join(", ")
+        : "Keine zusätzlichen Leistungen"
+}
 
 Ich interessiere mich für eine passende Kaffeelösung von BODA Snacks.`;
 
 
-        // Zum Kontaktformular springen
+        // ==========================
+        // INS KONTAKTFELD SCHREIBEN
+        // ==========================
 
-        const kontakt =
-            document.getElementById("kontakt");
+        contactMessage.value = message;
 
 
-        if (kontakt) {
+        // ==========================
+        // KONTAKTFELD SICHTBAR MACHEN
+        // ==========================
 
-            setTimeout(() => {
-
-                kontakt.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }, 100);
-
-        }
+        contactMessage.focus();
 
     });
 
