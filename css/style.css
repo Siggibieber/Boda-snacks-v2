@@ -2473,3 +2473,36 @@ opacity:0;
     display: block;
     opacity: 0.55;
 }
+/* ===========================
+   KONFIGURATOR – SERVICEPAUSCHALE
+=========================== */
+
+.config-price {
+    margin: 35px auto 10px;
+    padding: 24px 30px;
+    max-width: 520px;
+    text-align: center;
+    border: 1px solid rgba(212, 167, 55, 0.35);
+    border-radius: 18px;
+    background: rgba(20, 20, 20, 0.04);
+}
+
+.config-price span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.config-price strong {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.config-price small {
+    display: block;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.7;
+}
