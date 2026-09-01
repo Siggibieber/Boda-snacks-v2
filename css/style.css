@@ -2570,7 +2570,7 @@ opacity:0;
 }
 
 /* =========================
-   TEAM SECTION
+   TEAM / ÜBER UNS
    ========================= */
 
 .team-section {
@@ -2588,19 +2588,19 @@ opacity:0;
   align-items: center;
 }
 
-/* FOTO */
+/* FOTO – ORIGINALFARBEN BEIBEHALTEN */
 
 .team-image {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .team-image img {
   width: 100%;
   display: block;
-
-  filter: grayscale(100%);
+  filter: none;
   transition: transform 0.5s ease;
 }
 
@@ -2634,13 +2634,13 @@ opacity:0;
 .team-content h3 {
   margin: 12px 0 0;
 
-  color: #777;
+  color: #b89445;
   font-size: 21px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .team-line {
-  width: 55px;
+  width: 60px;
   height: 3px;
 
   background: #b89445;
@@ -2648,8 +2648,10 @@ opacity:0;
   margin: 28px 0;
 }
 
+/* ZITAT */
+
 .team-quote {
-  color: #202020;
+  color: #b89445;
 
   font-size: 23px;
   line-height: 1.45;
@@ -2658,8 +2660,10 @@ opacity:0;
   margin-bottom: 25px;
 }
 
+/* BESCHREIBUNG */
+
 .team-content p:not(.team-quote):not(.team-signature) {
-  color: #666;
+  color: #555;
   font-size: 16px;
   line-height: 1.8;
 
@@ -2686,12 +2690,13 @@ opacity:0;
 }
 
 .team-values strong {
-  color: #202020;
+  color: #b89445;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .team-values span {
-  color: #888;
+  color: #777;
   font-size: 13px;
 }
 
