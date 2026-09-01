@@ -1,59 +1,575 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vielen Dank | BODA Snacks Kaffee</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Vielen Dank für Ihre Anfrage | BODA Snacks</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="description"
+        content="Vielen Dank für Ihre Anfrage bei BODA Snacks. Wir melden uns in der Regel innerhalb von 24 Stunden persönlich bei Ihnen.">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <style>
+
+        /* ==========================================
+           GRUNDLAYOUT
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #202020 0%,
+                    #111 45%,
+                    #080808 100%
+                );
+
+            color: #fff;
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 20px;
+        }
+
+
+        /* ==========================================
+           CONTAINER
+        ========================================== */
+
+        .page {
+            width: 100%;
+            max-width: 900px;
+        }
+
+
+        /* ==========================================
+           LOGO
+        ========================================== */
+
+        .logo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .logo img {
+            width: 180px;
+            max-width: 70%;
+            height: auto;
+            display: inline-block;
+        }
+
+
+        /* ==========================================
+           HAUPTKARTE
+        ========================================== */
+
+        .thank-you-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111,
+                    #181818
+                );
+
+            border:
+                1px solid
+                rgba(212,175,55,.20);
+
+            border-radius: 30px;
+
+            padding: 60px 55px;
+
+            text-align: center;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,.45);
+
+        }
+
+
+        /* ==========================================
+           GOLD LABEL
+        ========================================== */
+
+        .eyebrow {
+
+            color: #d4af37;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        /* ==========================================
+           ÜBERSCHRIFT
+        ========================================== */
+
+        h1 {
+
+            font-size: clamp(
+                34px,
+                6vw,
+                58px
+            );
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            font-weight: 800;
+
+        }
+
+        h1 span {
+            color: #d4af37;
+        }
+
+
+        /* ==========================================
+           TEXT
+        ========================================== */
+
+        .intro {
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            color: #ddd;
+
+        }
+
+        .intro strong {
+            color: #fff;
+        }
+
+
+        /* ==========================================
+           BESTÄTIGUNG
+        ========================================== */
+
+        .confirmation {
+
+            max-width: 650px;
+
+            margin: 0 auto 40px;
+
+            padding: 25px 30px;
+
+            background:
+                rgba(212,175,55,.06);
+
+            border:
+                1px solid
+                rgba(212,175,55,.16);
+
+            border-radius: 18px;
+
+        }
+
+        .confirmation p {
+
+            color: #ccc;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+        }
+
+        .confirmation strong {
+            color: #d4af37;
+        }
+
+
+        /* ==========================================
+           KONTAKT
+        ========================================== */
+
+        .contact-section {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            max-width: 650px;
+
+            margin: 0 auto 40px;
+
+        }
+
+        .contact-item {
+
+            padding: 20px;
+
+            background: #0d0d0d;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 16px;
+
+        }
+
+        .contact-item .label {
+
+            display: block;
+
+            color: #999;
+
+            font-size: 13px;
+
+            margin-bottom: 7px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+        .contact-item a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            font-size: 16px;
+
+        }
+
+        .contact-item a:hover {
+            color: #d4af37;
+        }
+
+
+        /* ==========================================
+           BUTTON
+        ========================================== */
+
+        .btn-primary {
+
+            display: inline-block;
+
+            padding:
+                16px 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d4af37,
+                    #b89220
+                );
+
+            color: #111;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: 800;
+
+            font-size: 16px;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+
+            box-shadow:
+                0 10px 25px
+                rgba(212,175,55,.15);
+
+        }
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(212,175,55,.25);
+
+        }
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+        .footer strong {
+            color: #aaa;
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding:
+                    20px 15px;
+            }
+
+            .logo {
+                margin-bottom: 25px;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .thank-you-card {
+
+                padding:
+                    40px 22px;
+
+                border-radius: 24px;
+
+            }
+
+            h1 {
+
+                font-size: 38px;
+
+            }
+
+            .intro {
+
+                font-size: 17px;
+
+                line-height: 1.65;
+
+            }
+
+            .confirmation {
+
+                padding:
+                    20px;
+
+            }
+
+            .contact-section {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .btn-primary {
+
+                width: 100%;
+
+                padding:
+                    16px 20px;
+
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <main class="thank-you">
+    <main class="page">
 
-        <img
-            src="logo.png"
-            alt="BODA Snacks"
-            class="thank-you-logo">
 
-        <span class="thank-you-label">
-            VIELEN DANK
-        </span>
+        <!-- =====================================
+             LOGO
+        ====================================== -->
 
-        <h1>
-            Ihre Anfrage ist angekommen.
-        </h1>
+        <div class="logo">
 
-        <p>
-            Vielen Dank für Ihr Interesse an der
-            BODA Kaffeelösung.
-        </p>
+            <img
+                src="logo.png"
+                alt="BODA Snacks">
 
-        <p>
-            Wir haben Ihre Angaben erfolgreich erhalten
-            und melden uns persönlich bei Ihnen.
-        </p>
-
-        <div class="thank-you-note">
-            In der Regel hören Sie innerhalb von
-            <strong>24 Stunden</strong> von uns.
         </div>
 
-        <a
-            href="index.html"
-            class="btn-gold">
-            Zurück zu BODA Kaffee
-        </a>
+
+        <!-- =====================================
+             DANKESSEITE
+        ====================================== -->
+
+        <section class="thank-you-card">
+
+
+            <div class="eyebrow">
+                Anfrage erfolgreich übermittelt
+            </div>
+
+
+            <h1>
+                Vielen Dank für Ihre
+                <span>Anfrage!</span>
+            </h1>
+
+
+            <p class="intro">
+
+                Ihre Anfrage ist erfolgreich bei
+                <strong>BODA Snacks</strong>
+                eingegangen.
+
+                Wir freuen uns über Ihr Interesse
+                und kümmern uns persönlich um Ihr
+                Anliegen.
+
+            </p>
+
+
+            <!-- =====================================
+                 BESTÄTIGUNG
+            ====================================== -->
+
+            <div class="confirmation">
+
+                <p>
+
+                    Wir prüfen Ihre Angaben und melden
+                    uns in der Regel innerhalb von
+                    <strong>24 Stunden</strong>
+                    persönlich bei Ihnen.
+
+                    <br><br>
+
+                    Bitte haben Sie etwas Geduld –
+                    wir melden uns schnellstmöglich
+                    bei Ihnen.
+
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 KONTAKT
+            ====================================== -->
+
+            <div class="contact-section">
+
+
+                <div class="contact-item">
+
+                    <span class="label">
+                        Telefon
+                    </span>
+
+                    <a href="tel:+4972317703719">
+                        +49 7231 7703719
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="label">
+                        E-Mail
+                    </span>
+
+                    <a href="mailto:kontakt@boda-snacks.de">
+                        kontakt@boda-snacks.de
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 ZURÜCK
+            ====================================== -->
+
+            <a
+                href="index.html"
+                class="btn-primary">
+
+                Zurück zu BODA Snacks
+
+            </a>
+
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <div class="footer">
+
+            <strong>
+                Ihr Team von BODA Snacks
+            </strong>
+
+            <br>
+
+            Pforzheim · Karlsruhe · Enzkreis · Stuttgart
+            · Böblingen · Calw · Ludwigsburg · Holzgerlingen
+
+        </div>
+
 
     </main>
 
