@@ -295,6 +295,16 @@ margin-top:15px;
 
 }
 
+.hero-buttons .btn-gold,
+.hero-buttons .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    padding: 0 36px;
+    box-sizing: border-box;
+}
+
 .btn-gold{
     background:linear-gradient(
         135deg,
