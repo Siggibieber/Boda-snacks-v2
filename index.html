@@ -1178,26 +1178,62 @@ content="Premium Kaffeeautomaten für Unternehmen. Kostenlos aufgestellt. Voller
 
         </div>
 
-        <form class="contact-form">
+    <form
+    class="contact-form"
+    action="https://formsubmit.co/kontakt@boda-snacks.de"
+    method="POST">
 
-            <input type="text" placeholder="Firmenname" required>
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false">
 
-            <input type="text" placeholder="Ansprechpartner">
+    <input
+        type="hidden"
+        name="_subject"
+        value="Neue Kaffee-Anfrage über BODA Snacks">
 
-            <input type="email" placeholder="E-Mail" required>
+    <input
+        type="hidden"
+        name="_template"
+        value="table">
 
-            <input type="tel" placeholder="Telefon">
+    <input
+        type="text"
+        name="Firmenname"
+        placeholder="Firmenname"
+        required>
+
+    <input
+        type="text"
+        name="Ansprechpartner"
+        placeholder="Ansprechpartner"
+        required>
+
+    <input
+        type="email"
+        name="E-Mail"
+        placeholder="E-Mail"
+        required>
+
+    <input
+        type="tel"
+        name="Telefon"
+        placeholder="Telefon">
 
     <textarea
-    id="contactMessage"
-    rows="6"
-    placeholder="Ihre Nachricht"></textarea>
+        id="contactMessage"
+        name="Nachricht"
+        rows="6"
+        placeholder="Ihre Nachricht"></textarea>
 
-            <button type="submit" class="btn-gold">
-                Kostenloses Angebot anfordern
-            </button>
+    <button
+        type="submit"
+        class="btn-gold">
+        Anfrage absenden
+    </button>
 
-        </form>
+</form>
 
     </div>
 
