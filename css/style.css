@@ -2568,3 +2568,178 @@ opacity:0;
     line-height: 1.5;
     opacity: 0.7;
 }
+
+/* =========================
+   TEAM SECTION
+   ========================= */
+
+.team-section {
+  background: #f5f5f3;
+  padding: 100px 24px;
+}
+
+.team-container {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* FOTO */
+
+.team-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.team-image img {
+  width: 100%;
+  display: block;
+
+  filter: grayscale(100%);
+  transition: transform 0.5s ease;
+}
+
+.team-image:hover img {
+  transform: scale(1.02);
+}
+
+/* TEXT */
+
+.team-label {
+  display: inline-block;
+
+  color: #b89445;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+}
+
+.team-content h2 {
+  margin: 0;
+
+  color: #202020;
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.team-content h3 {
+  margin: 12px 0 0;
+
+  color: #777;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.team-line {
+  width: 55px;
+  height: 3px;
+
+  background: #b89445;
+
+  margin: 28px 0;
+}
+
+.team-quote {
+  color: #202020;
+
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 600;
+
+  margin-bottom: 25px;
+}
+
+.team-content p:not(.team-quote):not(.team-signature) {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+
+  margin-bottom: 16px;
+}
+
+/* WERTE */
+
+.team-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin-top: 35px;
+  padding-top: 28px;
+
+  border-top: 1px solid #ddd;
+}
+
+.team-values div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.team-values strong {
+  color: #202020;
+  font-size: 15px;
+}
+
+.team-values span {
+  color: #888;
+  font-size: 13px;
+}
+
+/* SIGNATUR */
+
+.team-signature {
+  margin-top: 35px;
+
+  color: #777;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.team-signature strong {
+  color: #202020;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .team-section {
+    padding: 70px 20px;
+  }
+
+  .team-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .team-content h2 {
+    font-size: 38px;
+  }
+
+  .team-content h3 {
+    font-size: 19px;
+  }
+
+  .team-quote {
+    font-size: 20px;
+  }
+
+  .team-values {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+}
