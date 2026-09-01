@@ -2748,3 +2748,9 @@ opacity:0;
   }
 
 }
+
+.team-image img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
