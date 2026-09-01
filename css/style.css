@@ -337,7 +337,7 @@ box-shadow:0 20px 45px rgba(212,175,55,.45);
 
 .btn-outline{
 
-padding:16px 38px;
+padding:18px 38px;
 
 border-radius:50px;
 
@@ -346,6 +346,8 @@ border:2px solid rgba(255,255,255,.35);
 color:white;
 
 transition:.35s;
+
+transform: translateY(6px);
 
 }
 
