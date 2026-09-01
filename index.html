@@ -1178,16 +1178,12 @@ content="Premium Kaffeeautomaten für Unternehmen. Kostenlos aufgestellt. Voller
 
         </div>
 
-    <form
+   <form
     class="contact-form"
     action="https://formsubmit.co/kontakt@boda-snacks.de"
     method="POST">
 
-    <input
-        type="hidden"
-        name="_captcha"
-        value="false">
-
+    <!-- FormSubmit Einstellungen -->
     <input
         type="hidden"
         name="_subject"
@@ -1195,9 +1191,15 @@ content="Premium Kaffeeautomaten für Unternehmen. Kostenlos aufgestellt. Voller
 
     <input
         type="hidden"
+        name="_next"
+        value="https://boda-snacks.de/danke.html">
+
+    <input
+        type="hidden"
         name="_template"
         value="table">
 
+    <!-- Kundendaten -->
     <input
         type="text"
         name="Firmenname"
@@ -1221,12 +1223,34 @@ content="Premium Kaffeeautomaten für Unternehmen. Kostenlos aufgestellt. Voller
         name="Telefon"
         placeholder="Telefon">
 
+    <!-- Nachricht / Konfiguration -->
     <textarea
         id="contactMessage"
         name="Nachricht"
         rows="6"
         placeholder="Ihre Nachricht"></textarea>
 
+    <!-- Datenschutz -->
+    <div class="privacy-check">
+        <label>
+            <input
+                type="checkbox"
+                name="Datenschutz"
+                value="zugestimmt"
+                required>
+
+            <span>
+                Ich stimme der Verarbeitung meiner Daten
+                gemäß
+                <a href="datenschutz.html" target="_blank">
+                    Datenschutzerklärung
+                </a>
+                zu.
+            </span>
+        </label>
+    </div>
+
+    <!-- Absenden -->
     <button
         type="submit"
         class="btn-gold">
