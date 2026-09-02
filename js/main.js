@@ -612,3 +612,85 @@ Ich interessiere mich für eine passende Kaffeelösung von BODA Snacks.`;
     });
 
 });
+/* =====================================
+   COOKIE CONSENT
+===================================== */
+
+function loadAnalytics() {
+
+    const script = document.createElement('script');
+
+    script.async = true;
+    script.src =
+        'https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ';
+
+    document.head.appendChild(script);
+
+    script.onload = function () {
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-6RJ6RX8XWZ');
+    };
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const banner =
+        document.getElementById('cookie-banner');
+
+    const saved =
+        localStorage.getItem('bodaCookiesAccepted');
+
+
+    if (saved === 'true') {
+
+        banner.style.display = 'none';
+
+        loadAnalytics();
+    }
+
+
+    if (saved === 'false') {
+
+        banner.style.display = 'none';
+    }
+
+
+    document
+        .getElementById('cookie-accept')
+        .addEventListener('click', () => {
+
+            localStorage.setItem(
+                'bodaCookiesAccepted',
+                'true'
+            );
+
+            banner.style.display = 'none';
+
+            loadAnalytics();
+        });
+
+
+    document
+        .getElementById('cookie-decline')
+        .addEventListener('click', () => {
+
+            localStorage.setItem(
+                'bodaCookiesAccepted',
+                'false'
+            );
+
+            banner.style.display = 'none';
+        });
+
+});
